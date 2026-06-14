@@ -449,8 +449,8 @@
   function makePhoto(p){
     const group=new THREE.Group();
     const isF=p.type==='feature';
-    const offset=isF?0:10.5;
-    const baseY=isF?9.5:6.0;
+    const offset=isF?0:14.5;
+    const baseY=isF?14:10;
     group.position.set(pathX(p.z)+p.side*offset, baseY, p.z);
     group.rotation.y=-p.side*0.34;
 
@@ -468,7 +468,7 @@
     loader.load(img(p.f, isF?1300:950), (tex)=>{
       tex.encoding=THREE.sRGBEncoding;
       const iw=tex.image.width, ih=tex.image.height, aspect=iw/ih;
-      const H=isF? (aspect>1?11.25:15.75) : (aspect>1?9:12);
+      const H=isF? (aspect>1?16.9:23.6) : (aspect>1?13.5:18);
       const W=H*aspect;
       photo.material.map=tex; photo.material.color.set(0xffffff); photo.material.needsUpdate=true;
       photo.scale.set(W,H,1); back.scale.set(W+0.28,H+0.28,1); frame.scale.set(W+0.7,H+0.7,1);
